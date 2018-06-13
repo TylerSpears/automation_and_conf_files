@@ -12,6 +12,20 @@
 # Based on Makefile found at kristopherjohnson/Makefile
 
 
+# Instructions:
+# Type of documents to make determined by "type" variable
+# set type var in the call to make
+#
+# Ex:
+# To make a presentation of all .md files in current directory:
+# 	make type=presentation
+#
+# To make pdf document versions of all .md files in current directory:
+# 	make pdf type=document
+# 	or
+# 	make pdf
+#
+
 SOURCE_DOCS := $(wildcard *.md)
 
 # variable for what type of files to create
