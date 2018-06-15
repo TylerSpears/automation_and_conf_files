@@ -26,15 +26,15 @@
 # 	make pdf
 #
 
-SOURCE_DOCS := $(wildcard *.md)
+SOURCE_DOCS ?= $(wildcard *.md)
 
 # variable for what type of files to create
 type ?= document
 
-RM=/bin/rm
-PANDOC=/usr/bin/pandoc
+RM ?= /bin/rm
+PANDOC ?= /usr/bin/pandoc
 
-PANDOC_OPTIONS= --standalone
+PANDOC_OPTIONS ?= --standalone
 
 PRESENTATION_TYPES= pres presentation reveal.js present
 DOCUMENT_TYPES= document doc docs article
@@ -70,7 +70,7 @@ EXPORTED_DOCS=\
  $(SOURCE_DOCS:.md=.html) \
  $(SOURCE_DOCS:.md=.pdf) 
 
-DECKTAPE_PDF_OPTIONS=--no-sandbox
+DECKTAPE_PDF_OPTIONS ?= --no-sandbox
 
 # otherwise, just export to html
  else
@@ -99,7 +99,8 @@ REVEAL_JS_LINK = http://lab.hakim.se/reveal-js
   endif
  endif
 
-PANDOC_REVEAL_JS_OPTIONS = --to revealjs -V revealjs-url=$(REVEAL_JS_LINK)
+PANDOC_REVEAL_JS_OPTIONS ?= --to revealjs -V revealjs-url=$(REVEAL_JS_LINK) \
+						   --section-divs --self-contained
 
 # synonyms for making presentation
 .PHONY: $(PRESENTATION_TYPES)
@@ -135,12 +136,12 @@ present: all
 # else if type is one of document types, make all document types
 else ifneq ($(findstring $(type), $(DOCUMENT_TYPES)),  )
 
-PANDOC_HTML_OPTIONS=--to html5
-PANDOC_PDF_OPTIONS=
-PANDOC_DOCX_OPTIONS=
-PANDOC_RTF_OPTIONS=
-PANDOC_ODT_OPTIONS=
-PANDOC_EPUB_OPTIONS=--to epub3
+PANDOC_HTML_OPTIONS ?= --to html5
+PANDOC_PDF_OPTIONS ?=
+PANDOC_DOCX_OPTIONS ?=
+PANDOC_RTF_OPTIONS ?=
+PANDOC_ODT_OPTIONS ?=
+PANDOC_EPUB_OPTIONS ?= --to epub3
 
 EXPORTED_DOCS=\
  $(SOURCE_DOCS:.md=.html) \
