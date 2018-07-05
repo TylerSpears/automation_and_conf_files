@@ -1,0 +1,29 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.associations": {
+        "*.fs": "glsl"
+    },
+
+    // Git Bash
+    "terminal.integrated.shell.windows": "C:\\Users\\Tyler\\bin\\portable_apps\\Git_for_Windows\\bin\\bash.exe",
+    "sync.gist": "9b192a81e25199f832bd8fb68f067a2e",
+    "sync.lastUpload": "2017-06-26T01:02:15.684Z",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "2017-04-07T21:43:29.051Z",
+    "sync.version": 262,
+    "sync.showSummary": true,
+    "sync.forceDownload": false,
+    "sync.workspaceSync": false,
+    "sync.anonymousGist": false,
+
+    //Zen Mode Settings
+    "zenMode.hideTabs": false,
+
+    //drag and drop
+    "editor.dragAndDrop": true,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "workbench.startupEditor": "newUntitledFile"
+}
